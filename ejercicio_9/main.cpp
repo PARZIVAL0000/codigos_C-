@@ -5,45 +5,67 @@
 using namespace std;
 
 void opcionUno(){
-    int i = 1;
-    char next;
+    //Calculamos la suma de notas ingresadas...
 
-    int notas[];
-    int indexador = 0;
+    char opcion;
 
-    while(i <= 3){
-        //Aqui pediremos que nos ingresen notas.
-        cout << "[*] Ingresa tu nota:  ";
-        cin >> notas[indexador];
+    double notas = 0;
+    double sumaNotas = 0;
+    int notasTotal = 1;
 
-        if(i == 3){
-            cout << "[?] Quieres seguir ingresando notas [Y/N]:  ";
-            cin >> next;
+    int contador = 0;
 
-            if(next == 'Y' || next == 'y'){
-                i = 0;
+    while(contador <= 3){
+        cout << "\n\t[>] Ingresa tu nota: "; cin >> notas;
+        sumaNotas += notas;
+
+        if(contador == 3){
+            cout << "[?] Quieres seguir ingresando notas[Y/N]: ";
+            cin >> opcion;
+
+            if(opcion == 'Y' || opcion == 'y'){
+                contador = 0;
             }
 
-            if(next == 'N' || next == 'n'){
+            if(opcion == 'N' || opcion == 'n'){
                 break;
             }
-
         }
 
-        indexador += 1;
-        i+=1;
+        notasTotal += 1;
+        contador+= 1;
     }
 
     sleep(2);
     system("clear");
-    //Calculamos las notas ingresadas....
-    cout << "\n\t\t******************************************" << endl;
-    cout << "\t\t Promediando notas ....                    " << endl;
-    cout << "\t\t******************************************" << endl;
+    cout << "\n\t\t***************************************" << endl;
+    cout << "\t\t| CALCULANDO PROMEDIO                 |" << endl;
+    cout << "\t\t***************************************" << endl;
 
-    //stoi
+    cout << "Tu promedio general: " << sumaNotas / notasTotal;
+}
 
+bool opcionDos(){
 
+    cout << "**************************************************" << endl;
+    cout << "| NOMBRE: Dennis Ponce     |   CURSO: PRIMERO C  |" << endl;
+    cout << "| INSTITUTO: Instituto Tecnologico Universitario " << endl;
+    cout << "                                     Cordillera " << endl;
+    cout << "**************************************************" << endl;
+
+    bool elegir = false;
+    char op;
+    cout << "\n[>] Deseas regresar al menu [Y/N]  "; cin >> op;
+
+    if(op == 'Y' || op == 'y'){
+        elegir = true;
+        return elegir;
+    }
+
+    if(op == 'n' || op == 'N'){
+        elegir = false;
+        return elegir;
+    }
 }
 
 int main()
@@ -72,9 +94,10 @@ int main()
 
        while(stop){
 
+            system("clear");
             cout << "\n\t\t**********************************************" << endl;
             cout << "\t\t|     [1] CALCULAR PROMEDIO                  |" << endl;
-            cout << "\t\t|     [2] MOSTRAR DATOS GENERALES            |" << endl;
+            cout << "\t\t|     [2] INFO                               |" << endl;
             cout << "\t\t|     [3] SALIR                              |" << endl;
             cout << "\t\t**********************************************" << endl;
 
@@ -94,8 +117,17 @@ int main()
 
             if(op_menu == '2'){
 
+                stop = false;
+
+
+                bool resultado = opcionDos();
+
+                if(resultado){
+                    stop = resultado;
+                }
 
             }
+
 
             if(op_menu == '3'){
                 stop = false;
