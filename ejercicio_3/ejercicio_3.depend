@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669428741 source:/home/denni/Escritorio/ejercicio_3/main.cpp
+	<iostream>
+	<unistd.h>
+

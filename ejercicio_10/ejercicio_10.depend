@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1669510025 source:/home/denni/Escritorio/ejercicio_10/main.cpp
+	<iostream>
+	<unistd.h>
+	<cstdlib>
+

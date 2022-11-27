@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669332489 source:/home/denni/Escritorio/ejercicios_itsco/main.cpp
+	<iostream>
+	<unistd.h>
+
